@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ERP Integra - Videos</title>
+  <title>ERP Integra - Manual Interativo</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -11,138 +11,104 @@
   <header class="topbar">
     <div class="container">
       <div class="brand">
-        <div class="logo-circle" aria-hidden="true">ERP Integra</div>
+        <div class="logo-circle" data-tab="sobre">ERP Integra</div>
         <div class="brand-text">
-         
-          <p class="tag">Principais vídeos</p>
+          <p class="tag">Manual Interativo</p>
         </div>
       </div>
-
-      <button id="menuToggle" class="hamburger" aria-label="Abrir menu">
-        ☰
-      </button>
-
-      
-      <nav id="mainNav" class="nav">
-        <div class="dropdown">
-          <button class="tab-btn">🏠 Início</button>
-          <div class="dropdown-content">
-            <a href="#" data-tab="inicio">Página Inicial</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button class="tab-btn">💼 Menu Arquivo</button>
-          <div class="dropdown-content">
-            <a href="#" data-tab="vendas-filial">Cadastro de Filial</a>
-            <a href="#" data-tab="vendas-mes">Encerramento de Mês</a>
-            <a href="#" data-tab="vendas-operacoes">Cadastro de Operações</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button class="tab-btn">👥 Contas a Receber - Clientes</button>
-          <div class="dropdown-content">
-            <a href="#" data-tab="clientes-cadastro">Cadastro de Clientes</a>
-            <a href="#" data-tab="clientes-busca">Busca e Edição</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button class="tab-btn">📦 Menu Vendas</button>
-          <div class="dropdown-content">
-            <a href="#" data-tab="produtos-cadastro">Cadastro de Produtos</a>
-            <a href="#" data-tab="produtos-marcas">Cadastro de Marcas</a>
-            <a href="#" data-tab="produtos-grupos">Cadastro de Grupos</a>
-            <a href="#" data-tab="produtos-movimento">Movimento de Vendas</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button class="tab-btn">ℹ️ Sobre</button>
-          <div class="dropdown-content">
-            <a href="#" data-tab="sobre">Sobre o Sistema</a>
-          </div>
-        </div>
-      </nav>
+      <button id="openMenu" class="menu-btn" aria-label="Abrir Central">☰ Central de Videos</button>
     </div>
   </header>
 
-  <main class="container main">
-    <!-- Painéis de conteúdo -->
-    <section id="inicio" class="tab-panel active">
-      <h2>Bem-vindo à Página inicial </br>do Manual ERP Integra</h2>
-      <p class="lead">Selecione um módulo no menu acima para assistir aos tutoriais e aprender cada função do sistema!</p>
+  <!-- CENTRAL DE ACESSO -->
+  <div id="menuOverlay" class="menu-overlay" aria-hidden="true">
+    <div class="menu-content" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+      <h2 id="menuTitle">📚 Central de Videos</h2>
+
+      <div class="menu-section dropdown">
+        <h3 class="dropdown-header">💼 Página Inicial</h3>
+        <div class="dropdown-content">
+          <button data-tab="sobre">Início</button>
+        </div>
+      </div>
+
+
+      <div class="menu-section dropdown">
+        <h3 class="dropdown-header">💼 Arquivo</h3>
+        <div class="dropdown-content">
+          <button data-tab="vendas-filial">Cadastro de Filial</button>
+          <button data-tab="vendas-mes">Encerramento de Mês</button>
+          <button data-tab="vendas-operacoes">Cadastro de Operações</button>
+        </div>
+      </div>
+
+      <div class="menu-section dropdown">
+        <h3 class="dropdown-header">👥 Contas a Receber</h3>
+        <div class="dropdown-content">
+          <button data-tab="clientes-cadastro">Cadastro de Clientes</button>
+          <button data-tab="clientes-busca">Busca e Edição</button>
+        </div>
+      </div>
+
+      <div class="menu-section dropdown">
+        <h3 class="dropdown-header">📦 Vendas</h3>
+        <div class="dropdown-content">
+          <button data-tab="produtos-cadastro">Cadastro de Produtos</button>
+          <button data-tab="produtos-marcas">Cadastro de Marcas</button>
+          <button data-tab="produtos-grupos">Cadastro de Grupos</button>
+          <button data-tab="produtos-movimento">Movimento de Vendas</button>
+        </div>
+      </div>
+
+      <div class="menu-section dropdown">
+        <h3 class="dropdown-header">🛒 Compras</h3>
+        <div class="dropdown-content">
+          <button data-tab="entrada-notas">Entrada de Notas</button>
+        </div>
+      </div>
+
+      <div class="menu-section">
+        <h3>ℹ️ Sobre</h3>
+        <div class="dropdown-content">
+          <button data-tab="sobre">Sobre o ERP Integra</button>
+        </div>
+      </div>
+
+      <button id="closeMenu" class="close-btn">Fechar ✕</button>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="content">
+    <!-- Página inicial -->
+    <section id="sobre" class="tab-panel active">
+      <h2>Bem-vindo ao ERP Integra</h2>
+      <p>Este é o manual interativo do ERP Integra. Aqui você encontra tutoriais em vídeo e guias para as principais funções do sistema.</p>
+      <p>Use o botão “Central de Acesso” acima para navegar entre os módulos e aprender de forma rápida e visual.</p>
+      <div class="video-wrap" data-video-type="youtube"
+        data-video-src="https://www.youtube.com/embed/9Fr_sVt7E1k"></div>
     </section>
 
     <section id="vendas-filial" class="tab-panel">
       <h2>Cadastro de Filial</h2>
-      <div class="video-wrap" data-video-type="youtube" data-video-src="">
-        <div class="video-placeholder">Vídeo de Cadastro de Filial — Em breve</div>
-      </div>
+      <div class="video-wrap" data-video-type="youtube"
+        data-video-src=""></div>
     </section>
 
-    <section id="vendas-mes" class="tab-panel">
-      <h2>Encerramento de Mês</h2>
-      <div class="video-wrap" data-video-type="" data-video-src="">
-        <div class="video-placeholder">Vídeo de Encerramento de Mês — Em breve</div>
-      </div>
+    <section id="entrada-notas" class="tab-panel">
+      <h2>Entrada de Notas</h2>
+      <div class="video-wrap" data-video-type="youtube"
+        data-video-src="https://www.youtube.com/embed/Y4X4KbU5b9c"></div>
     </section>
 
-    <section id="vendas-operacoes" class="tab-panel">
-      <h2>Cadastro de Operações</h2>
-      <div class="video-wrap" data-video-type="" data-video-src="">
-        <div class="video-placeholder">Vídeo de Cadastro de Operações — Em breve</div>
-      </div>
-    </section>
-
-    <section id="clientes-cadastro" class="tab-panel">
-      <h2>Cadastro de Clientes</h2>
-      <div class="video-wrap" data-video-type="" data-video-src="">
-        <div class="video-placeholder">Vídeo de Cadastro de Clientes — Em breve</div>
-      </div>
-    </section>
-
-    <section id="clientes-busca" class="tab-panel">
-      <h2>Busca e Edição de Clientes</h2>
-      <div class="video-wrap" data-video-type="" data-video-src="">
-        <div class="video-placeholder">Vídeo de Busca de Clientes — Em breve</div>
-      </div>
-    </section>
-
-    <section id="produtos-cadastro" class="tab-panel">
-      <h2>Cadastro de Produtos</h2>
-      <div class="video-wrap" data-video-type="" data-video-src="">
-        <div class="video-placeholder">Vídeo de Cadastro de Produtos — Em breve</div>
-      </div>
-    </section>
-
-    <section id="produtos-marcas" class="tab-panel">
-      <h2>Cadastro de Marcas</h2>
-      <div class="video-wrap" data-video-type="" data-video-src="">
-        <div class="video-placeholder">Vídeo de Cadastro de Marcas — Em breve</div>
-      </div>
-    </section>
-
-    <section id="produtos-grupos" class="tab-panel">
-      <h2>Cadastro de Grupos</h2>
-      <div class="video-wrap" data-video-type="" data-video-src="">
-        <div class="video-placeholder">Vídeo de Cadastro de Grupos — Em breve</div>
-      </div>
-    </section>
-
-    <section id="produtos-movimento" class="tab-panel">
+<section id="produtos-movimento" class="tab-panel">
       <h2>Movimento de Vendas</h2>
-      <div class="video-wrap" data-video-type="youtube" data-video-src="https://www.youtube.com/embed/Y4X4KbU5b9c">
-        <div class="video-placeholder">Vídeo de Movimento de Vendas — Em breve</div>
-      </div>
+      <div class="video-wrap" data-video-type="youtube"
+        data-video-src="https://www.youtube.com/embed/2L678EL0q6Q"></div>
     </section>
 
-    <section id="sobre" class="tab-panel">
-      <h2>Sobre o Site</h2>
-      <p class="lead">ERP Integra — Manual Interativo</p>
-      <p>Versão 1.0 · Desenvolvido por Herick Souza </p>
-    </section>
+
+
   </main>
 
   <footer class="footer">
