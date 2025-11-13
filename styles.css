@@ -157,7 +157,7 @@ html, body {
   min-width: 200px;
   text-decoration: none;
   color: black;
-  font-weight: 200;
+  font-weight: 400;
 }
 .menu-section .dropdown-content button:hover {
   background: var(--verde-agua);
